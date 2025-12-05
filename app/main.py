@@ -1,11 +1,12 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.api.v1.routes import router as api_v1_router
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # startup logic 
+    # startup logic
     # await init_db
 
     yield
@@ -17,7 +18,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="Accounting software API",
     version="1.0.0",
-    lifespan=lifespan,  # register lifespan handler 
+    lifespan=lifespan,  # register lifespan handler
 )
 
 
@@ -35,11 +36,10 @@ app = FastAPI(
 # )
 
 
-# app.include_router(api_v1_router, prefix="/v1")
+app.include_router(api_v1_router, prefix="/v1")
 
 
 #  healthcheck
 @app.get("/health")
 async def health():
     return {"status": "ok"}
-
