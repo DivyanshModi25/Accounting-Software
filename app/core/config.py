@@ -1,0 +1,1 @@
+DB_URL="postgresql://accounting_user:accounting_user@localhost:5432/accounting_db"

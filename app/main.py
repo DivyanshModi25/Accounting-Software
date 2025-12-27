@@ -1,6 +1,12 @@
-def main():
-    print("Hello from accounting-software!")
+from fastapi import FastAPI,Depends
+from app.api.routes import router
 
 
-if __name__ == "__main__":
-    main()
+
+app = FastAPI()
+
+app.include_router(router)
+
+@app.get("/")
+def health():
+    return {"status":"healthy"}
