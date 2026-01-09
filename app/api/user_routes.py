@@ -8,7 +8,8 @@ from app.db.session import get_db
 from app.schemas.user_schema import UserCreate,UserReadProfile
 
 
-from app.services.user_services import create_user,get_current_user
+from app.services.user_services import create_user
+from app.auth.dependencies import get_current_user
 
 
 

@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 
 from app.db.session import get_db
 from app.core.security import verify_password
-from app.core.auth import create_access_token
+from app.auth.jwt import create_access_token
 
 
 from app.schemas.auth_schema import LoginRequest

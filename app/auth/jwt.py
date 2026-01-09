@@ -14,6 +14,8 @@ def create_access_token(data:dict,expiry_minutes:int = ACCESS_TOKEN_EXPIRY_MINUT
     token=jwt.encode(to_encode,PRIVATE_KEY,algorithm=ALGORITHM)
     return token
 
+
+
 def verify_token(token:str):
     try:
         payload = jwt.decode(token,PUBLIC_KEY,algorithms=[ALGORITHM])
