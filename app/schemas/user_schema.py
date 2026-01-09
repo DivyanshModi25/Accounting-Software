@@ -15,3 +15,4 @@ class UserRead(BaseModel):
     class config:
         from_attributes=True
 
+
