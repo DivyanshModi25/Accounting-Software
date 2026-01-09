@@ -6,7 +6,7 @@ from app.db.session import get_db
 from app.auth.jwt import verify_token
 
 
-from app.db.models import User
+from app.db.models.user_models import User
 
 
 

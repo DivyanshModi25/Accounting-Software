@@ -7,7 +7,7 @@ from app.auth.dependencies import get_current_user
 
 
 from app.schemas.user_schema import UserCreate,UserReadProfile
-from app.db.models import User
+from app.db.models.user_models import User
 
 from app.services.user_services import create_user
 
