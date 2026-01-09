@@ -1,16 +1,15 @@
-from fastapi import APIRouter,Depends,Request
+from fastapi import APIRouter,Depends
 from sqlalchemy.orm import Session
 
 
 from app.db.session import get_db
+from app.auth.dependencies import get_current_user
 
 
 from app.schemas.user_schema import UserCreate,UserReadProfile
-
+from app.db.models import User
 
 from app.services.user_services import create_user
-from app.auth.dependencies import get_current_user
-
 
 
 
@@ -24,11 +23,9 @@ def register_user(data:UserCreate, db:Session=Depends(get_db)):
 
 
 
-@router.post("/me",response_model=UserReadProfile)
-def current_user_profile(request:Request,db:Session=Depends(get_db)):
-    user_profile = get_current_user(request,db)
-
-    return user_profile
+@router.get("/me",response_model=UserReadProfile)
+def current_user_profile(current_user:User = Depends(get_current_user)):
+    return current_user
 
 
     
