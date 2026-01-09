@@ -14,7 +14,7 @@ from app.services.user_services import create_user
 
 
 
-router = APIRouter(prefix='/users')
+router = APIRouter(prefix='/users',tags=["user"])
 
 
 @router.post("/registerUser",response_model=UserReadProfile)

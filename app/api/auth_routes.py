@@ -16,7 +16,7 @@ from app.services.user_services import get_user_by_username
 
 
 
-router = APIRouter(prefix='/auth')
+router = APIRouter(prefix='/auth',tags=["auth"])
 
 
 @router.post("/login")
