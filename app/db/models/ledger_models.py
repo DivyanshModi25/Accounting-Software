@@ -24,6 +24,10 @@ class LedgerGroup(Base):
             "(is_system = true AND user_id IS NULL) OR (is_system = false AND user_id IS NOT NULL)",
             name="ledger_group_system_user_check"
         ),
+        CheckConstraint(
+            "NOT (is_system = false AND parent_id IS NULL)",
+            name="ledger_group_parent_required_for_user_groups"
+        ),
     )
 
 
@@ -46,8 +50,8 @@ class LedgerGroup(Base):
     )
 
 
-    is_system:Mapped[bool] = mapped_column(Boolean,default=False)
-    is_active:Mapped[bool] = mapped_column(Boolean,default=True)
+    is_system:Mapped[bool] = mapped_column(Boolean,default=False,nullable=False,server_default="false")
+    is_active:Mapped[bool] = mapped_column(Boolean,default=True,nullable=False,server_default="true")
 
 
     #Relationships
@@ -112,8 +116,8 @@ class Ledger(Base):
         default=BalanceType.DEBIT
     )
 
-    is_system: Mapped[bool] = mapped_column(Boolean, default=False)
-    is_active: Mapped[bool] = mapped_column(Boolean, default=True)
+    is_system: Mapped[bool] = mapped_column(Boolean, default=False,nullable=False,server_default="false")
+    is_active: Mapped[bool] = mapped_column(Boolean, default=True,nullable=False,server_default="true")
 
 
     #Relationships
