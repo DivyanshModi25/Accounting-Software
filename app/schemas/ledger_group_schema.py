@@ -6,7 +6,6 @@ from typing import Optional
 
 class LedgerGroupCreate(BaseModel):
     name:str
-    account_type:AccountType
     parent_id:int
     
 
@@ -15,7 +14,7 @@ class LedgerGroupRead(BaseModel):
     name:str
     account_type:AccountType
     parent_id:Optional[int] 
-    is_system=bool
+    is_system:bool
 
     class config:
         orm_mode=True 
