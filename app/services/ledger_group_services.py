@@ -20,8 +20,6 @@ def create_group(db:Session,user_id:int,data:LedgerGroupCreate):
     if not parent:
         raise HTTPException(status_code=400,detail="Invalid parent group")
 
-    
-    print(parent.parent)
 
 
     my_ledger_group = LedgerGroup(
