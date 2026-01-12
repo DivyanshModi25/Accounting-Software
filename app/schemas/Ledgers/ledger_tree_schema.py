@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import List
 
 from app.db.models.ledger_models import AccountType
-from app.schemas.ledger_schema import LedgerRead
+from app.schemas.Ledgers.ledger_schema import LedgerRead
 
 
 class LedgerGroupTree(BaseModel):

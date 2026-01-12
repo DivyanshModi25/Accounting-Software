@@ -6,9 +6,9 @@ from app.auth.dependencies import get_current_user
 from app.db.session import get_db
 
 from app.db.models.user_models import User
-from app.schemas.ledger_schema import LedgerRead,LedgerCreate
+from app.schemas.Ledgers.ledger_schema import LedgerRead,LedgerCreate
 
-from app.services.ledger_service import get_all_ledgers,create_ledger,get_ledgers_by_group
+from app.services.Ledgers.ledger_service import get_all_ledgers,create_ledger,get_ledgers_by_group
 
 
 

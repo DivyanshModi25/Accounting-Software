@@ -6,7 +6,7 @@ from app.db.session import get_db
 from app.auth.dependencies import get_current_user
 
 from app.db.models.user_models import User
-from app.schemas.ledger_tree_schema import LedgerGroupTree
+from app.schemas.Ledgers.ledger_tree_schema import LedgerGroupTree
 
 from app.services.ledger_tree_service import get_group_tree
 

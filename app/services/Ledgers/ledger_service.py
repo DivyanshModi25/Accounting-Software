@@ -2,7 +2,7 @@ from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
 from app.db.models.ledger_models import Ledger,LedgerGroup
-from app.schemas.ledger_schema import LedgerCreate
+from app.schemas.Ledgers.ledger_schema import LedgerCreate
 
 
 def get_all_ledgers(db:Session,user_id:int):
