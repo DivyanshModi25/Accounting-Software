@@ -8,7 +8,7 @@ from app.auth.dependencies import get_current_user
 from app.db.models.user_models import User
 from app.schemas.Ledgers.ledger_tree_schema import LedgerGroupTree
 
-from app.services.ledger_tree_service import get_group_tree
+from app.services.Ledgers.ledger_tree_service import get_group_tree
 
 
 router=APIRouter(prefix="/ledger-tree",tags=["ledger-tree"])
